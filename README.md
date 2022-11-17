@@ -196,8 +196,11 @@ Below is a snippet of the JQuery, Bootstrap and CSS I utilized.
     border-radius: 8px;
     width: 125px;
     color: var(--secondary-color--dark);
-}
+}![StylingGIF1](https://user-images.githubusercontent.com/101986765/202557231-8ae0c474-5dd7-43d2-bc38-165855c7e49d.gif)
+
 /****************************End of BLOG Create Page***********************************/
 ```
 <p>Below is a rendering of some of the CRUD pages I customized.</p>
-![](https://github.com/egarcia8/LiveProjectCodeSummary/blob/main/StylingGIF1.gif)
+
+
+![StylingGIF1](https://user-images.githubusercontent.com/101986765/202557353-4cdc16f0-0410-4814-8500-a13f42538448.gif)
