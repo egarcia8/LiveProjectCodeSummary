@@ -199,3 +199,5 @@ Below is a snippet of the JQuery, Bootstrap and CSS I utilized.
 }
 /****************************End of BLOG Create Page***********************************/
 ```
+<p>Below is a rendering of some of the CRUD pages I customized.</p>
+![](https://github.com/egarcia8/LiveProjectCodeSummary/blob/main/StylingGIF1.gif)
