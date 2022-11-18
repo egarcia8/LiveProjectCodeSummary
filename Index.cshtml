@@ -1,0 +1,77 @@
+﻿@model IEnumerable<TheatreCMS3.Areas.Blog.Models.BlogPost>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/Areas/Blog.js"></script>
+
+
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<div class="container blogpostIndex-Container">
+    <div id="alerts"></div>
+   
+    @foreach (var item in Model)
+    {
+        <div class="row" id="blog-@item.BlogPostId">
+            <div class="col">
+                <div class="card mb-3" style="max-width: 1080px;">
+                    <div class="row g-0">
+                        <div class="col-md-6">
+                            <img class="img-fluid" src="~/Content/images/BlogPostDefault.jpg" alt="default image" />
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card-body text-truncate-container">
+                                <p class="card-text">
+                                    <small class="font-weight-bold">
+                                        @Html.DisplayFor(modelItem => item.Author)
+                                    </small>
+                                    <small class="text-muted">
+                                        @Html.DisplayFor(modelItem => item.Posted)
+                                    </small>
+                                </p>
+                                <h5 class="card-title">@Html.DisplayFor(modelItem => item.Title)</h5>
+                                <p class="card-text">
+                                    @Html.DisplayFor(modelItem => item.Content)
+                                </p>
+                            </div>
+                            <div>
+                                @Html.ActionLink(" Edit", "Edit", new { id = item.BlogPostId }, new { @class = "btn btn-edit fas fa-edit" })
+                                @Html.ActionLink(" Details", "Details", new { id = item.BlogPostId }, new { @class = "btn btn-details fas fa-info" })
+                                <!--Button trigger modal-->
+                                <button type="button" id="@item.BlogPostId" onclick="BlogController.onOpenModal(@item.BlogPostId)" class="btn btn-delete fas fa-trash" data-bs-toggle="modal" data-mdb-target="#deleteModal">
+                                    Delete
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!--Modal-->
+    <div class="modal fade" id="deleteModal-@item.BlogPostId" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content modalContent">
+                <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="deleteModalLabel">Delete?</h2>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you would like to delete this post?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-cancel" onclick="BlogController.onCloseModal(@item.BlogPostId)">Cancel</button>
+                    <button type="button" class="btn btn-confirm" onclick="BlogController.onDeleteBlog(@item.BlogPostId)">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End of Modal-->
+    }
+</div>
+
