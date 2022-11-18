@@ -2,12 +2,12 @@
 Code snippets from live project working collaboratively over a two week sprint
 <h2>Introduction</h2>
 <p>
-During the last two weeks of my coding boot camp at The Tech Academy, I had the opportunity to work on a project with a team of my peers to develop an interactive website using ASP .NET MVC and Entity Framework. This website is used for managing content and productions for an acting company, and it is designed to be a content management service for the users to manage the website on their own. During this two-week sprint, I was able to add requested features, use Chrome Developer Tools to fix bugs and review and refactor my own code. I was able to see how a big project can be broken down into smaller feasible stories. I experienced working with a more senior developer to understand how to approach coding and troubleshooting problems. I worked on several back-end stories that gave me a more comprehensive understanding of Entity Framework. I was also able to utilize Javascript and Bootstrap to complete many front-end stories. This project allowed me to gain experience in working with the Agile framework to help me develop my project management skills.
-Below you will find descriptions of the stories I completed along with code snippets. I also have a few complete code files in this repo for the larger functionalities I implemented.
+During the last two weeks of my coding boot camp at The Tech Academy, I had the opportunity to work on a project with a team of my peers to develop an interactive website using ASP .NET MVC and Entity Framework. This website is used for managing content and productions for an acting company, and it is designed to be a content management service for the users to operate the website on their own. During this two-week sprint, I was able to add requested features, use developer tools to fix bugs and review and refactor my own code. I saw how a big project can be broken down into smaller feasible stories. I experienced working with a more senior developer to understand how to approach coding and troubleshooting problems. I worked on several back-end stories that gave me a more comprehensive understanding of Entity Framework. I was also able to utilize Javascript and Bootstrap to complete many front-end stories. This project allowed me to gain experience in working with the Agile framework to help me develop my project management skills.
 </p>
 <h2>Back-End Stories</h2>
 
 * Create BlogPost Model and CRUD functionality
+* Seeding a Database
 
 
 
@@ -31,7 +31,7 @@ namespace TheatreCMS3.Areas.Blog.Models
     }
 }
 ```
-<p> I then had to ensure I created a table for BlogPosts before I created the controller.</p>
+<p> I then had to ensure I created a table for BlogPosts before I created the controller by creating a DBSet property for that entity set.</p>
 
 ```
  public System.Data.Entity.DbSet<TheatreCMS3.Areas.Blog.Models.BlogPost> BlogPosts { get; set; }
@@ -39,10 +39,35 @@ namespace TheatreCMS3.Areas.Blog.Models
 ```
 <p>Then using Entity Framework I created the controller and scaffolded the CRUD pages.</p>
 
-<h3></h3>
+<h3>Seeding a Database</h3>
+<p>To test a new PostMaster class, I created a seed method for PostMaster. I also created a user role called "PostMaster" and assigned it to the Postmaster being seeded.</p>
+
+```
+ public static void Seed(ApplicationDbContext context)
+        {
+            if (!context.Users.Any())
+            {
+                
+                var postMaster = new PostMaster { UserName = "egarcia", Email = "blogadmin@gmail.com", PasswordHash = "12345", PublishedBlogPosts = 4, RejectedBlogPosts = 2, PendingBlogPosts = 1 };
+               
+                context.PostMasters.Add(postMaster);
+               
+                var userStore = new UserStore<PostMaster>(context); 
+                userStore.CreateAsync(postMaster);
+                
+                var userResult = userStore.FindByEmailAsync(postMaster.Email).Result; 
+                var userRoleResult = userStore.AddToRoleAsync(userResult, "PostMaster");
+                userRoleResult.Wait();
+
+                context.SaveChanges();
+            }
+     
+        }
+```        
+        
 
 <h2>Front-End Stories</h2>
-* Style the Create and Edit Pages for BlogPost Model
+Style the Create and Edit pages BlogPost Model
 
 <h3>Style the CRUD Pages for BlogPost Model</h3>
 <p>I utilized CSS and Bootstrap to customize the CRUD pages according to the requested features. The features included responsive buttons and input boxes, buttons with icons using Font-Awesome, and a dynamic display of the blog posts as they are created and deleted among other features.  
@@ -196,11 +221,17 @@ Below is a snippet of the JQuery, Bootstrap and CSS I utilized.
     border-radius: 8px;
     width: 125px;
     color: var(--secondary-color--dark);
-}![StylingGIF1](https://user-images.githubusercontent.com/101986765/202557231-8ae0c474-5dd7-43d2-bc38-165855c7e49d.gif)
+}
 
 /****************************End of BLOG Create Page***********************************/
 ```
 <p>Below is a rendering of some of the CRUD pages I customized.</p>
 
-
 ![StylingGIF1](https://user-images.githubusercontent.com/101986765/202557353-4cdc16f0-0410-4814-8500-a13f42538448.gif)
+
+<p>I also added a modal to confirm the user wants to delete a blog post. I utlilized an ajax call with a JSON result to update the DOM without reloading the page.</p>
+
+![StylingGIF2](https://user-images.githubusercontent.com/101986765/202802858-60ae69ec-204c-4c9a-8048-238dbd078ed6.gif)
+
+
+
