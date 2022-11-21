@@ -8,6 +8,7 @@ Below you will find descriptions of the stories I completed along with code snip
 <h2>Back-End Stories</h2>
 
 *  <a href="https://github.com/egarcia8/LiveProjectCodeSummary/edit/main/README.md#create-blogpost-model-and-crud-functionality">Create BlogPost Model and CRUD functionality</a>
+
 * <a href="https://github.com/egarcia8/LiveProjectCodeSummary/edit/main/README.md#seeding-a-database">Seeding a Database</a>
 
 
@@ -236,6 +237,7 @@ Below is a snippet of the JQuery, Bootstrap and CSS I utilized.
 
 <p>I was also tasked with adding a modal to the index page. The modal was to confirm the user wanted to delete the blog post. Once it was confirmed the an alert appeared confirming the deletion and the post was removed from the page without reloading it. I utilized an AJAX call with a JSON result to update the DOM without reloading the page. Below you will find links to the code files in this repo.
 </p>
+
 * <a href="https://github.com/egarcia8/LiveProjectCodeSummary/blob/main/Index.cshtml">Index Page</a>
 
 * <a href="https://github.com/egarcia8/LiveProjectCodeSummary/blob/main/Blog.js">Modal Javascript</a>
@@ -246,6 +248,7 @@ Below is a snippet of the JQuery, Bootstrap and CSS I utilized.
 <h3>Other Skills Learned</h3>
 
 <p> 
+
  * Utilized Azure DevOps to collaborate with project managers and a group of developers 
  
  * Learned new approach to debug from other developers by observing process and asking questions
