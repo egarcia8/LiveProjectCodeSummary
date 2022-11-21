@@ -2,7 +2,7 @@
 Code snippets from live project working collaboratively over a two week sprint
 <h2>Introduction</h2>
 <p>
-During the last two weeks of my coding boot camp at The Tech Academy, I had the opportunity to work on a project with a team of my peers to develop an interactive website using ASP .NET MVC and Entity Framework. This website is used for managing content and productions for an acting company, and it is designed to be a content management service for the users to operate the website on their own. During this two-week sprint, I was able to add requested features, use Chrome Developer Tools to fix bugs and review and refactor my own code. I saw how a big project can be broken down into smaller feasible stories. I experienced working with a more senior developer to understand how to approach coding and troubleshoot problems. I worked on several back-end stories that gave me a more comprehensive understanding of Entity Framework. I was also able to utilize Javascript and Bootstrap to complete many front-end stories. This project allowed me to gain experience in working with the Agile framework to help me develop my project management skills. <br>
+During the last two weeks of my coding boot camp at The Tech Academy, I had the opportunity to work on a project with a team of my peers to develop an interactive website using ASP .NET MVC and Entity Framework. This website is used for managing content and productions for an acting company, and it is designed to be a content management service for the users to operate the website on their own. During this two-week sprint, I was able to add requested features, use Chrome Developer Tools to fix bugs and review and refactor my own code. I saw how a big project can be broken down into smaller feasible stories. I experienced working with a more senior developer to understand how to approach coding and troubleshoot problems. I worked on several <a href="https://github.com/egarcia8/LiveProjectCodeSummary/edit/main/README.md#back-end-stories">back-end stories</a> that gave me a more comprehensive understanding of Entity Framework. I was also able to utilize Javascript and Bootstrap to complete many <a href="https://github.com/egarcia8/LiveProjectCodeSummary/edit/main/README.md#front-end-stories">front-end stories</a>. This project allowed me to gain experience in working with the Agile framework to help me develop my project management and team programming <a href="https://github.com/egarcia8/LiveProjectCodeSummary/edit/main/README.md#other-skills-learned">skills</a>. <br>
 Below you will find descriptions of the stories I completed along with code snippets. I also have a few complete code files in this repo for the larger functionalities I implemented.
 </p>
 <h2>Back-End Stories</h2>
@@ -257,7 +257,6 @@ Below is a snippet of the JQuery, Bootstrap and CSS I utilized.
  
  * Practiced with pair coding to find bugs with another developer using Chrome Developer Tools
  
-    * I was having trouble with the API deleting the incorrect blog post entry. I sat with another developer as he naviagted through the process and we found that the first blog post was always the one to be deleted. Because the blogs were added through a for each loop, the modals were as well, so they all had the same id attribute. Once we gave each modal a unique identifier, the correct modal was deleted.
 </p>
 
 
