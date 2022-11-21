@@ -2,12 +2,13 @@
 Code snippets from live project working collaboratively over a two week sprint
 <h2>Introduction</h2>
 <p>
-During the last two weeks of my coding boot camp at The Tech Academy, I had the opportunity to work on a project with a team of my peers to develop an interactive website using ASP .NET MVC and Entity Framework. This website is used for managing content and productions for an acting company, and it is designed to be a content management service for the users to operate the website on their own. During this two-week sprint, I was able to add requested features, use developer tools to fix bugs and review and refactor my own code. I saw how a big project can be broken down into smaller feasible stories. I experienced working with a more senior developer to understand how to approach coding and troubleshoot problems. I worked on several back-end stories that gave me a more comprehensive understanding of Entity Framework. I was also able to utilize Javascript and Bootstrap to complete many front-end stories. This project allowed me to gain experience in working with the Agile framework to help me develop my project management skills.
+During the last two weeks of my coding boot camp at The Tech Academy, I had the opportunity to work on a project with a team of my peers to develop an interactive website using ASP .NET MVC and Entity Framework. This website is used for managing content and productions for an acting company, and it is designed to be a content management service for the users to operate the website on their own. During this two-week sprint, I was able to add requested features, use Chrome Developer Tools to fix bugs and review and refactor my own code. I saw how a big project can be broken down into smaller feasible stories. I experienced working with a more senior developer to understand how to approach coding and troubleshoot problems. I worked on several back-end stories that gave me a more comprehensive understanding of Entity Framework. I was also able to utilize Javascript and Bootstrap to complete many front-end stories. This project allowed me to gain experience in working with the Agile framework to help me develop my project management skills. <br>
+Below you will find descriptions of the stories I completed along with code snippets. I also have a few complete code files in this repo for the larger functionalities I implemented.
 </p>
 <h2>Back-End Stories</h2>
 
-* Create BlogPost Model and CRUD functionality
-* Seeding a Database
+*  <a href="https://github.com/egarcia8/LiveProjectCodeSummary/edit/main/README.md#create-blogpost-model-and-crud-functionality">Create BlogPost Model and CRUD functionality</a>
+* <a href="https://github.com/egarcia8/LiveProjectCodeSummary/edit/main/README.md#seeding-a-database">Seeding a Database</a>
 
 
 
@@ -67,7 +68,9 @@ namespace TheatreCMS3.Areas.Blog.Models
         
 
 <h2>Front-End Stories</h2>
-Style the Create and Edit pages BlogPost Model
+
+* <a href="https://github.com/egarcia8/LiveProjectCodeSummary/edit/main/README.md#style-the-crud-pages-for-blogpost-model">Style the CRUD Pages for BlogPost Model</a>
+* <a href="https://github.com/egarcia8/LiveProjectCodeSummary/edit/main/README.md#create-a-delete-modal-on-index-page">Create a Delete Modal on Index Page</a>
 
 <h3>Style the CRUD Pages for BlogPost Model</h3>
 <p>I utilized CSS and Bootstrap to customize the CRUD pages according to the requested features. The features included responsive buttons and input boxes, buttons with icons using Font-Awesome, and a dynamic display of the blog posts as they are created and deleted among other features.  
@@ -229,9 +232,29 @@ Below is a snippet of the JQuery, Bootstrap and CSS I utilized.
 
 ![StylingGIF1](https://user-images.githubusercontent.com/101986765/202557353-4cdc16f0-0410-4814-8500-a13f42538448.gif)
 
-<p>I also added a modal to confirm the user wants to delete a blog post. I utlilized an ajax call with a JSON result to update the DOM without reloading the page.</p>
+<h3>Create a Delete Modal on Index Page</h3>
+
+<p>I was also tasked with adding a modal to the index page. The modal was to confirm the user wanted to delete the blog post. Once it was confirmed the an alert appeared confirming the deletion and the post was removed from the page without reloading it. I utilized an AJAX call with a JSON result to update the DOM without reloading the page. Below you will find links to the code files in this repo.
+</p>
+* <a href="https://github.com/egarcia8/LiveProjectCodeSummary/blob/main/Index.cshtml">Index Page</a>
+
+* <a href="https://github.com/egarcia8/LiveProjectCodeSummary/blob/main/Blog.js">Modal Javascript</a>
+<p>Here you can see how the delete modal functioned.</p>
 
 ![StylingGIF2](https://user-images.githubusercontent.com/101986765/202802858-60ae69ec-204c-4c9a-8048-238dbd078ed6.gif)
 
+<h3>Other Skills Learned</h3>
+
+<p> 
+ * Utilized Azure DevOps to collaborate with project managers and a group of developers 
+ 
+ * Learned new approach to debug from other developers by observing process and asking questions
+ 
+ * Participated in daily standups and weekly code retrospectives to reflect on strengths and weaknesses
+ 
+ * Practiced with pair coding to find bugs with another developer using Chrome Developer Tools
+ 
+    * I was having trouble with the API deleting the incorrect blog post entry. I sat with another developer as he naviagted through the process and we found that the first blog post was always the one to be deleted. Because the blogs were added through a for each loop, the modals were as well, so they all had the same id attribute. Once we gave each modal a unique identifier, the correct modal was deleted.
+</p>
 
 
